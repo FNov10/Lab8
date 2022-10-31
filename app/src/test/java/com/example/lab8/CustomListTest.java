@@ -50,7 +50,7 @@ public class CustomListTest {
     /**
      * adds to list
      * deletes
-     *
+     *check if the added city no longer exists
      */
     @Test
     public void deleteCityTest(){
@@ -58,6 +58,27 @@ public class CustomListTest {
         list.addCity(newCity);
         list.deleteCity(newCity);
         assertFalse(list.hasCity(newCity));
+    }
+
+
+    /**
+     * adding 2 citiess to list, then checking if the count function counted them correctly
+     */
+    @Test
+
+    public void countCitiesTest(){
+        City City1 = new City("Detroit", "Mi");
+        City City2 = new City("LA", "California");
+
+
+        list.addCity(City1);
+        list.addCity(City2);
+
+
+        int count = list.countCities();
+
+        assertEquals(2, count);
+
     }
 
 
